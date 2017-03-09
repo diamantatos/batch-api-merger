@@ -26,9 +26,6 @@
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
     "express": "^4.15.0",
-    "fs": "0.0.1-security",
     "mocha": "^3.2.0",
-    "pump": "^1.0.2",
-    "request-retry-stream": "^2.0.0"
   }
 }
