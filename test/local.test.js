@@ -18,7 +18,7 @@ describe('localhost get rest api tests', function () {
 
 
     app.get('/api/countries', function (req, res,next) {
-      res.send([{countrie: 'Greece', name: 'Hellas'},{countrie: 'Denmark', name: 'Danmark'}]);
+      res.send([{country: 'Greece', name: 'Hellas'},{country: 'Denmark', name: 'Danmark'}]);
     })
 
     app.listen(3000, function () {

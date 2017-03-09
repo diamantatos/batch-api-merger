@@ -19,7 +19,7 @@ app.get('/api/customers/23', function (req, res,next) {
 })
 
 app.get('/api/countries', function (req, res,next) {
-  res.send([{countrie: 'Greece', name: 'Hellas'},{countrie: 'Denmark', name: 'Danmark'}]);
+  res.send([{country: 'Greece', name: 'Hellas'},{country: 'Denmark', name: 'Danmark'}]);
 })
 
 app.listen(3000, function () {
@@ -33,7 +33,7 @@ http://localhost:3000/api/resources?users=api/users&customer=api/customers/23&co
 
 will give back
 
-{"users":[{"username":"hello","name":"world"},{"username":"john","name":"doe"}],"customer":{"customer":"hello","name":"world"},"countries":[{"countrie":"Greece","name":"Hellas"},{"countrie":"Denmark","name":"Danmark"}]}
+{"users":[{"username":"hello","name":"world"},{"username":"john","name":"doe"}],"customer":{"customer":"hello","name":"world"},"countries":[{"country":"Greece","name":"Hellas"},{"country":"Denmark","name":"Danmark"}]}
 
 # License
 
