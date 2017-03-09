@@ -1,4 +1,5 @@
 # batch-api-merger
+[![Build Status](https://travis-ci.org/diamantatos/batch-api-merger.svg?branch=master)](https://travis-ci.org/diamantatos/batch-api-merger)
 Batch Api Merger
 ===========
 
