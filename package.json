@@ -1,6 +1,6 @@
 {
   "name": "batch-api-merger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A module that gets a single REST api request containing multiple REST api endpoints, gathers the reply of each one and sends back to the client a complete answer. ",
   "main": "index.js",
   "scripts": {
