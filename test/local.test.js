@@ -35,7 +35,7 @@ describe('localhost get rest api tests', function () {
           expect(res).to.have.status(200);
           expect(res.body.users[0].username).to.equal('hello');
           expect(res.body.users[1].name).to.equal('doe');
-          expect(res.body.countries[0].countrie).to.equal('Greece');
+          expect(res.body.countries[0].country).to.equal('Greece');
           expect(res.body.countries[1].name).to.equal('Danmark');
           expect(res.body.customer.name).to.equal('world');
         done();
