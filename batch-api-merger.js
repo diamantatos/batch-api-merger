@@ -1,8 +1,8 @@
 var express = require('express');
-app = express();
 var fetch = require('isomorphic-fetch');
+let app = express();
 
-var reflectFetches = function(promise) {
+let reflectFetches = function(promise) {
   return promise.fetch
     .then(data => {
       return {property: promise.property, data: tryParseJSON(data.body.read()), status: "resolved"}
@@ -14,7 +14,7 @@ var reflectFetches = function(promise) {
 
 function tryParseJSON(jsonString){
     try {
-        var o = JSON.parse(jsonString);
+        let o = JSON.parse(jsonString);
         if (o && typeof o === "object") {
             return o;
         }
@@ -26,9 +26,8 @@ function tryParseJSON(jsonString){
 
 module.exports = function(root = 'http://localhost:3000/', apiEndpoint = '/api/resources'){
   app.get(apiEndpoint, function (req, res, next) {
-    var promises = [];
-    var reply = {};
-    for (var property in req.query) {
+    let promises = [];
+    for (let property in req.query) {
       promises.push({fetch: fetch(root+req.query[property]), property: property });
     }
     res.writeHead(200, {'Content-Type': 'application/json'});
@@ -38,13 +37,8 @@ module.exports = function(root = 'http://localhost:3000/', apiEndpoint = '/api/r
       values.map(function(value) {
         reply[value.property] = value.data;
       });
-      let json = JSON.stringify(reply);
-      json = json.replace(/\"([^(\")"]+)\":/g,"$1:");
-
-      //console.log(values);
       res.write(JSON.stringify(reply));
     }).then(function() {
-      //res.write('}');
       res.end();
     });
 
