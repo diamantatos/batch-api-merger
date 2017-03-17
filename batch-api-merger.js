@@ -31,7 +31,6 @@ module.exports = function(root = 'http://localhost:3000/', apiEndpoint = '/api/r
       promises.push({fetch: fetch(root+req.query[property]), property: property });
     }
     res.writeHead(200, {'Content-Type': 'application/json'});
-
     Promise.all(promises.map(reflectFetches)).then(values => {
       let reply = {};
       values.map(function(value) {
