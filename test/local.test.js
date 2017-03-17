@@ -1,6 +1,6 @@
 var chai = require('chai')
-  , chaiHttp = require('chai-http')
-  , app = require('../batch-api-merger')('http://localhost:3000/', '/api/resources');
+, chaiHttp = require('chai-http')
+, app = require('../batch-api-merger')('http://localhost:3000/', '/api/resources');
 chai.use(chaiHttp);
 var expect = chai.expect;
 
@@ -20,7 +20,7 @@ describe('localhost get rest api tests', function () {
     })
 
     app.listen(3000, function () {
-      
+
     })
   });
 
@@ -29,13 +29,13 @@ describe('localhost get rest api tests', function () {
       chai.request(app)
       .get('/api/resources?users=api/users&customer=api/customers/23&countries=api/countries')
       .end((err, res) => {
-          expect(res).to.be.ok;
-          expect(res).to.have.status(200);
-          expect(res.body.users[0].username).to.equal('hello');
-          expect(res.body.users[1].name).to.equal('doe');
-          expect(res.body.countries[0].country).to.equal('Greece');
-          expect(res.body.countries[1].name).to.equal('Danmark');
-          expect(res.body.customer.name).to.equal('world');
+        expect(res).to.be.ok;
+        expect(res).to.have.status(200);
+        expect(res.body.users[0].username).to.equal('hello');
+        expect(res.body.users[1].name).to.equal('doe');
+        expect(res.body.countries[0].country).to.equal('Greece');
+        expect(res.body.countries[1].name).to.equal('Danmark');
+        expect(res.body.customer.name).to.equal('world');
         done();
       });
     });
@@ -43,12 +43,12 @@ describe('localhost get rest api tests', function () {
       chai.request(app)
       .get('/api/resources?users=api/users&customer=api/customers/23&countries=api/countrie')
       .end((err, res) => {
-          expect(res).to.be.ok;
-          expect(res).to.have.status(200);
-          expect(res.body.users[0].username).to.equal('hello');
-          expect(res.body.users[1].name).to.equal('doe');
-          expect(res.body.countries).to.equal('Error: Unable to get countries');
-          expect(res.body.customer.name).to.equal('world');
+        expect(res).to.be.ok;
+        expect(res).to.have.status(200);
+        expect(res.body.users[0].username).to.equal('hello');
+        expect(res.body.users[1].name).to.equal('doe');
+        expect(res.body.countries).to.equal('Error: Unable to get countries');
+        expect(res.body.customer.name).to.equal('world');
         done();
       });
     });
