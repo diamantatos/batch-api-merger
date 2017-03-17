@@ -31,7 +31,7 @@ module.exports = function(root = 'http://localhost:3000/', apiEndpoint = '/api/r
     for (var property in req.query) {
       promises.push({fetch: fetch(root+req.query[property]), property: property });
     }
-    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.writeHead(200, {'Content-Type': 'application/json'});
 
     Promise.all(promises.map(reflectFetches)).then(values => {
       let reply = {};
@@ -42,7 +42,7 @@ module.exports = function(root = 'http://localhost:3000/', apiEndpoint = '/api/r
       json = json.replace(/\"([^(\")"]+)\":/g,"$1:");
 
       //console.log(values);
-      res.write(json);
+      res.write(JSON.stringify(reply));
     }).then(function() {
       //res.write('}');
       res.end();

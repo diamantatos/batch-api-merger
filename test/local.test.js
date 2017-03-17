@@ -20,7 +20,7 @@ describe('localhost get rest api tests', function () {
     })
 
     app.listen(3000, function () {
-      console.log('Example app listening on port 3000!')
+      
     })
   });
 
@@ -29,7 +29,6 @@ describe('localhost get rest api tests', function () {
       chai.request(app)
       .get('/api/resources?users=api/users&customer=api/customers/23&countries=api/countries')
       .end((err, res) => {
-          console.log(res);
           expect(res).to.be.ok;
           expect(res).to.have.status(200);
           expect(res.body.users[0].username).to.equal('hello');
@@ -42,7 +41,7 @@ describe('localhost get rest api tests', function () {
     });
     it('display error only on countries', (done) => {
       chai.request(app)
-      .get('/api/resources?users=api/user&customer=api/customers/23&countries=api/countries')
+      .get('/api/resources?users=api/users&customer=api/customers/23&countries=api/countrie')
       .end((err, res) => {
           expect(res).to.be.ok;
           expect(res).to.have.status(200);
