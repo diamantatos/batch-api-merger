@@ -4,24 +4,24 @@ let app = express();
 
 let reflectFetches = function(promise) {
   return promise.fetch
-    .then(data => {
-      return {property: promise.property, data: tryParseJSON(data.body.read()), status: "resolved"}
-    })
-    .catch(error => {
-      return {property: promise.property, data: `Error: Unable to get ${promise.property}`, status: "rejected"}
-    });
+  .then(data => {
+    return {property: promise.property, data: tryParseJSON(data.body.read()), status: "resolved"}
+  })
+  .catch(error => {
+    return {property: promise.property, data: `Error: Unable to get ${promise.property}`, status: "rejected"}
+  });
 }
 
 function tryParseJSON(jsonString){
-    try {
-        let o = JSON.parse(jsonString);
-        if (o && typeof o === "object") {
-            return o;
-        }
+  try {
+    let o = JSON.parse(jsonString);
+    if (o && typeof o === "object") {
+      return o;
     }
-    catch (e) {
-      throw new Error(`error: unable to get resource`);
-    }
+  }
+  catch (e) {
+    throw new Error(`error: unable to get resource`);
+  }
 };
 
 module.exports = function(root = 'http://localhost:3000/', apiEndpoint = '/api/resources'){
