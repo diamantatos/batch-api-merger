@@ -15,9 +15,7 @@ let reflectFetches = function(promise) {
 function tryParseJSON(jsonString){
   try {
     let o = JSON.parse(jsonString);
-    if (o && typeof o === "object") {
-      return o;
-    }
+    return o;
   }
   catch (e) {
     throw new Error(`error: unable to get resource`);
