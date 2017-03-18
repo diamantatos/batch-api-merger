@@ -22,13 +22,13 @@
   },
   "homepage": "https://github.com/diamantatos/batch-api-merger#readme",
   "dependencies": {
-    "chai": "^3.5.0",
-    "chai-http": "^3.0.0",
     "es6-promise": "^4.1.0",
     "express": "^4.15.0",
     "isomorphic-fetch": "^2.2.1"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.2.0",
     "codecov": "^2.1.0"
