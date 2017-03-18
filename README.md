@@ -1,5 +1,5 @@
 # batch-api-merger
-[![Build Status](https://travis-ci.org/diamantatos/batch-api-merger.svg?branch=master)](https://travis-ci.org/diamantatos/batch-api-merger)
+[![Build Status](https://travis-ci.org/diamantatos/batch-api-merger.svg?branch=master)](https://travis-ci.org/diamantatos/batch-api-merger)[![codecov](https://codecov.io/gh/diamantatos/batch-api-merger/branch/master/graph/badge.svg)](https://codecov.io/gh/diamantatos/batch-api-merger)
 
 Batch Api Merger
 ===========
